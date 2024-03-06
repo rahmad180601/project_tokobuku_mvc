@@ -9,35 +9,35 @@ SESUAIKAN BASE_URL DI CONFIG DAN DATABASENYA
 
 # Skame Database
 admin / petugas
-id (INT, PRIMARY KEY, AUTO_INCREMENT)
-nama (VARCHAR)
-username (VARCHAR, UNIQUE)
-password (VARCHAR)
-roles
+1. id (INT, PRIMARY KEY, AUTO_INCREMENT)
+2. nama (VARCHAR)
+3. username (VARCHAR, UNIQUE)
+4. password (VARCHAR)
+5. roles
 
 Produk
-id (INT, PRIMARY KEY, AUTO_INCREMENT)
-nama (VARCHAR)
-harga (DECIMAL)
-stok (INT)
+1. id (INT, PRIMARY KEY, AUTO_INCREMENT)
+2. nama (VARCHAR)
+3. harga (DECIMAL)
+4. stok (INT)
 
 Pelanggan
-id (INT, PRIMARY KEY, AUTO_INCREMENT)
-nama (VARCHAR)
-alamat (TEXT)
-telepon (VARCHAR)
+1. id (INT, PRIMARY KEY, AUTO_INCREMENT)
+2. nama (VARCHAR)
+3. alamat (TEXT)
+4. telepon (VARCHAR)
 
 Transaksi
-id (INT, PRIMARY KEY, AUTO_INCREMENT)
-tanggal_transaksi (DATE)
-id_pelanggan (INT, FOREIGN KEY REFERENCES pelanggan(id))
-jumlah (INT)
-total (DECIMAL)
+1. id (INT, PRIMARY KEY, AUTO_INCREMENT)
+2. tanggal_transaksi (DATE)
+3. id_pelanggan (INT, FOREIGN KEY REFERENCES pelanggan(id))
+4. jumlah (INT)
+5. total (DECIMAL)
 
 Peminjaman
-id (INT, PRIMARY KEY, AUTO_INCREMENT)
-id_transaksi (INT, FOREIGN KEY REFERENCES transaksi(id))
-id_produk (INT, FOREIGN KEY REFERENCES produk(id))
-tanggal_pinjam (DATE)
-tanggal_kembali (DATE)
-jumlah (INT)
+1. id (INT, PRIMARY KEY, AUTO_INCREMENT)
+2. id_transaksi (INT, FOREIGN KEY REFERENCES transaksi(id))
+3. id_produk (INT, FOREIGN KEY REFERENCES produk(id))
+4. tanggal_pinjam (DATE)
+5. tanggal_kembali (DATE)
+6. jumlah (INT)
