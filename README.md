@@ -8,33 +8,33 @@ Langka - langka menjalankan project Menggunakan github dekstop
 SESUAIKAN BASE_URL DI CONFIG DAN DATABASENYA
 
 # Skame Database
-# admin / petugas
+admin / petugas
 id (INT, PRIMARY KEY, AUTO_INCREMENT)
 nama (VARCHAR)
 username (VARCHAR, UNIQUE)
 password (VARCHAR)
 roles
 
-# Produk
+Produk
 id (INT, PRIMARY KEY, AUTO_INCREMENT)
 nama (VARCHAR)
 harga (DECIMAL)
 stok (INT)
 
-# Pelanggan
+Pelanggan
 id (INT, PRIMARY KEY, AUTO_INCREMENT)
 nama (VARCHAR)
 alamat (TEXT)
 telepon (VARCHAR)
 
-# Transaksi
+Transaksi
 id (INT, PRIMARY KEY, AUTO_INCREMENT)
 tanggal_transaksi (DATE)
 id_pelanggan (INT, FOREIGN KEY REFERENCES pelanggan(id))
 jumlah (INT)
 total (DECIMAL)
 
-#Peminjaman
+Peminjaman
 id (INT, PRIMARY KEY, AUTO_INCREMENT)
 id_transaksi (INT, FOREIGN KEY REFERENCES transaksi(id))
 id_produk (INT, FOREIGN KEY REFERENCES produk(id))
