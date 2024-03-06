@@ -31,13 +31,14 @@ Transaksi
 1. id (INT, PRIMARY KEY, AUTO_INCREMENT)
 2. tanggal_transaksi (DATE)
 3. id_pelanggan (INT, FOREIGN KEY REFERENCES pelanggan(id))
-4. jumlah (INT)
-5. total (DECIMAL)
+4. id_produk (INT, FOREIGN KEY REFERENCES produk(id))
+5. jumlah (INT)
+6. total (DECIMAL)
 
 Peminjaman
 1. id (INT, PRIMARY KEY, AUTO_INCREMENT)
-2. id_transaksi (INT, FOREIGN KEY REFERENCES transaksi(id))
-3. id_produk (INT, FOREIGN KEY REFERENCES produk(id))
+2. id_produk (INT, FOREIGN KEY REFERENCES produk(id))
+3. id_pelanggan (INT, FOREIGN KEY REFERENCES pelanggan(id))
 4. tanggal_pinjam (DATE)
 5. tanggal_kembali (DATE)
 6. jumlah (INT)
