@@ -13,7 +13,7 @@ admin / petugas
 2. nama (VARCHAR)
 3. username (VARCHAR, UNIQUE)
 4. password (VARCHAR)
-5. roles
+5. roles (VARCHAR) admin/petugas
 
 Produk
 1. id (INT, PRIMARY KEY, AUTO_INCREMENT)
