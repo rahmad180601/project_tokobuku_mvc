@@ -11,7 +11,7 @@ SESUAIKAN BASE_URL DI CONFIG DAN DATABASENYA
 admin / petugas
 1. id (INT, PRIMARY KEY, AUTO_INCREMENT)
 2. nama (VARCHAR)
-3. username (VARCHAR, UNIQUE)
+3. email (VARCHAR, UNIQUE)
 4. password (VARCHAR)
 5. roles (VARCHAR) admin/petugas
 
