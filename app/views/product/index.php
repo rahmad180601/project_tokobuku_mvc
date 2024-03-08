@@ -1,23 +1,3 @@
-<div class="main-sidebar">
-  <aside id="sidebar-wrapper">
-    <div class="sidebar-brand">
-      <a href="index.html">Stisla</a>
-    </div>
-    <div class="sidebar-brand sidebar-brand-sm">
-      <a href="index.html">St</a>
-    </div>
-    <ul class="sidebar-menu">
-      <li><a class="nav-link" href="<?= BASE_URL; ?>"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
-      <li class="menu-header">Page</li>
-      <li class="active"><a class="nav-link" href="<?= BASE_URL; ?>/product/"><i class="fa fa-book mr-0"></i> <span class="ml-4">Produk</span></a></li>
-      <li><a class="nav-link" href="#"><i class="far fa-square"></i> <span>Pelanggan</span></a></li>
-      <li><a class="nav-link" href="#"><i class="far fa-square"></i> <span>Transaksi</span></a></li>
-      <li><a class="nav-link" href="#"><i class="far fa-square"></i> <span>Peminjaman</span></a></li>
-    </ul>
-
-
-  </aside>
-</div>
 <div class="main-content">
   <section class="section">
     <?php Alert::alert(); ?>
@@ -40,7 +20,7 @@
                 <thead>
                   <tr>
                     <th>ID Barang</th>
-                    <th>Nama</th>
+                    <th>Nama Produk</th>
                     <th>@Harga satuan</th>
                     <th>Stok Jual</th>
                     <th>Stok Pinjam</th>
@@ -51,13 +31,13 @@
                   <?php foreach ($data['products'] as $product) : ?>
                     <tr>
                       <td><?= $product['id_produk']; ?></td>
-                      <td><?= $product['nama']; ?></td>
+                      <td><?= $product['nama_produk']; ?></td>
                       <td><?= $product['harga_satuan']; ?></td>
                       <td><?= $product['stok_jual']; ?></td>
                       <td><?= $product['stok_pinjam']; ?></td>
                       <td>
-                        <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                        <a class="btn btn-danger btn-action trigger--fire-modal-1" data-toggle="tooltip" title="" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')" data-original-title="Delete"><i class="fas fa-trash"></i></a>
+                        <a href="<?= BASE_URL; ?>/product/editForm/<?= $product['id_produk']; ?>" class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a>
+                        <a href="<?= BASE_URL; ?>/product/deleteProduct/<?= $product['id_produk']; ?>" class="btn btn-danger btn-action delete-btn" onclick="return confirm('Data <?= $product['nama_produk']; ?> akan dihapus. Yakin?')"><i class="fas fa-trash"></i></a>
                       </td>
                     </tr>
                   <?php endforeach; ?>
