@@ -10,10 +10,16 @@ class Flasher {
 
     public static function flash() {
         if (isset($_SESSION['flash'])) {   
-            echo '<div class="alert alert-' . $_SESSION['flash']['tipe'] . ' alert-dismissible fade show" role="alert">
-            Artikel <strong>' . $_SESSION['flash']['pesan'] . '</strong> ' . $_SESSION['flash']['aksi'] . '
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>';
+            echo '
+                <div class="alert alert-' . $_SESSION['flash']['tipe'] . ' alert-dismissible show fade">
+                    <div class="alert-body">
+                        <button class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                        </button>
+                        Data <strong>' . $_SESSION['flash']['pesan'] . '</strong> ' . $_SESSION['flash']['aksi'] . '
+                    </div>
+                </div>
+            ';
             unset($_SESSION['flash']);
         }
     }
