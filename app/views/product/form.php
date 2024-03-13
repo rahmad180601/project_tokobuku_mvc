@@ -17,7 +17,7 @@
           </div>
           <div class="form-group">
             <label for="nama">Nama</label>
-            <input type="text" class="form-control" id="nama_produk" name="nama" required>
+            <input type="text" class="form-control" id="nama_produk" name="nama_produk" required>
             <div class="invalid-feedback">
               Nama produk tidak boleh kosong!
             </div>

@@ -1,11 +1,12 @@
 <div class="main-content">
   <section class="section">
-    <?php Alert::alert(); ?>
+   
     <div class="section-header">
       <h1><?= $data['judul']; ?></h1>
     </div>
 
     <div class="section-body">
+    <?php Alert::alert(); ?>
       <div class="col-lg-12 col-md-12 col-12 col-sm-12">
         <div class="card">
           <div class="card-header">

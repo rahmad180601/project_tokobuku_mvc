@@ -5,6 +5,7 @@
  *
  */
 
+"use strict";
 
 $("#alert-succ")
   .fadeTo(5000, 1000)
