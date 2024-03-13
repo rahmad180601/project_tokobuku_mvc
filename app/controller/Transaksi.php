@@ -30,7 +30,7 @@ class Transaksi extends Controller {
     public function buat() {
         $data['produk'] = $this->model("TransaksiModel")->getProdukById($_POST['id_produk']);
         
-        $total = $data['produk']['harga'] * $_POST['jumlah'];
+        $total = $data['produk']['harga_satuan'] * $_POST['jumlah'];
 
         if($this->model('TransaksiModel')->buatTransaksi($_POST, $total) > 0) {
             Flasher::setFlash('berhasil', 'ditambahkan', 'success');
@@ -70,7 +70,7 @@ class Transaksi extends Controller {
     public function ubah() {
         $data['produk'] = $this->model("TransaksiModel")->getProdukById($_POST['id_produk']);
         
-        $total = $data['produk']['harga'] * $_POST['jumlah'];
+        $total = $data['produk']['harga_satuan'] * $_POST['jumlah'];
         
         if($this->model('TransaksiModel')->ubahTransaksi($_POST, $total) > 0) {
             Flasher::setFlash('berhasil', 'diubah', 'success');
