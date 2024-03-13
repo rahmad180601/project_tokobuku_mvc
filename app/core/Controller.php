@@ -2,7 +2,12 @@
 
 class Controller {
     public function view($view, $data = []) {
-        require_once "../app/views/" . $view . '.php';
+
+        if(!isset($_SESSION['user']['nama'])){
+            require_once '../app/views/auth/index.php';
+        }else{
+            require_once "../app/views/" . $view . '.php';
+        }
       }
 
     public function model($model) 

@@ -5,4 +5,11 @@
  *
  */
 
-"use strict";
+
+$("#alert-succ")
+  .fadeTo(5000, 1000)
+  .slideUp(1000, function () {
+    $("#alert-succ").slideUp(1000);
+  });
+("use strict");
+

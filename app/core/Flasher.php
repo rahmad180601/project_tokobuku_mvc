@@ -10,18 +10,17 @@ class Flasher {
 
     public static function flash() {
         if (isset($_SESSION['flash'])) {   
-            echo '
-                <div class="alert alert-' . $_SESSION['flash']['tipe'] . ' alert-dismissible show fade">
-                    <div class="alert-body">
-                        <button class="close" data-dismiss="alert">
-                            <span>&times;</span>
-                        </button>
-                        Data <strong>' . $_SESSION['flash']['pesan'] . '</strong> ' . $_SESSION['flash']['aksi'] . '
-                    </div>
-                </div>
-            ';
+            $alertClass = 'alert-' . $_SESSION['flash']['tipe'];
+            echo '<div class="alert ' . $alertClass . ' alert-dismissible fade show" role="alert">
+            <strong>' . $_SESSION['flash']['pesan'] . '</strong> ' . $_SESSION['flash']['aksi'] . '
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>';
             unset($_SESSION['flash']);
         }
     }
-
+    
 }
+
+?>

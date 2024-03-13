@@ -1,7 +1,7 @@
 <?php
 
 class App {
-    protected $controller = "Home";
+    protected $controller = "Login";
     protected $method = "index";
     protected $params = [];
 
@@ -79,3 +79,5 @@ class App {
     //     }
     // }
 }
+
+?>
