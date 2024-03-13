@@ -14,8 +14,11 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <title>Halaman <?= $data['judul']; ?></title>
+
+    <!-- Template CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
     <link rel="stylesheet" href="<?= BASE_URL; ?>/assets/css/style.css">
     <link rel="stylesheet" href="<?= BASE_URL; ?>/assets/css/components.css">
 </head>
@@ -42,7 +45,9 @@
                 <ul class="navbar-nav navbar-right">
                     <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                             <img alt="image" src="<?= BASE_URL; ?>/assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
+
                             <div class="d-sm-none d-lg-inline-block">Hi,  <?= $_SESSION['user']['nama']; ?></div>
+
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <div class="dropdown-title">Logged in 5 min ago</div>
@@ -56,7 +61,10 @@
                                 <i class="fas fa-cog"></i> Settings
                             </a> -->
                             <div class="dropdown-divider"></div>
+
+
                             <a href="<?= BASE_URL; ?>/login/logout" class="dropdown-item has-icon text-danger">
+
                                 <i class="fas fa-sign-out-alt"></i> Logout
                             </a>
                         </div>
@@ -66,6 +74,7 @@
             <div class="main-sidebar">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
+
                         <a href="index.html">Book</a>
                     </div>
                     <div class="sidebar-brand sidebar-brand-sm">
