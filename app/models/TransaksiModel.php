@@ -8,9 +8,9 @@ class TransaksiModel {
      }
 
      public function getAllTransaksi() { 
-          $this->db->query("SELECT transaksi.*, produk.*, pelanggan.* 
+          $this->db->query("SELECT transaksi.*, product.*, pelanggan.* 
                FROM transaksi 
-               INNER JOIN produk ON transaksi.id_produk = produk.id_produk 
+               INNER JOIN product ON transaksi.id_produk = product.id_produk 
                INNER JOIN pelanggan ON transaksi.id_pelanggan = pelanggan.id_pelanggan");
           return $this->db->resultAll();
      }
@@ -21,14 +21,14 @@ class TransaksiModel {
      }
 
      public function getAllProduk() {
-          $this->db->query("SELECT * FROM produk");
+          $this->db->query("SELECT * FROM product");
           return $this->db->resultAll();
      }
     
      public function getTransaksiById($id) {
-          $this->db->query("SELECT transaksi.*, produk.*, pelanggan.* 
+          $this->db->query("SELECT transaksi.*, product.*, pelanggan.* 
                FROM transaksi 
-               INNER JOIN produk ON transaksi.id_produk = produk.id_produk 
+               INNER JOIN product ON transaksi.id_produk = product.id_produk 
                INNER JOIN pelanggan ON transaksi.id_pelanggan = pelanggan.id_pelanggan
                WHERE transaksi.id_transaksi = :id");
           $this->db->bind('id', $id);
@@ -36,7 +36,7 @@ class TransaksiModel {
      }
 
      public function getProdukById($id) {
-          $this->db->query("SELECT * FROM produk WHERE id_produk = :id");
+          $this->db->query("SELECT * FROM product WHERE id_produk = :id");
           $this->db->bind('id', $id);
           return $this->db->resultSingle();
      }
