@@ -88,7 +88,7 @@
                         <?php endif; ?>
                         <li><a class="nav-link" href="#"><i class="fas fa-th"></i> <span>Produk</span></a></li>
                         <li><a class="nav-link" href="#"><i class="far fa-user"></i> <span>Pelanggan</span></a></li>
-                        <li><a class="nav-link" href="#"><i class="fas fa-th-large"></i>  <span>Transaksi</span></a></li>
+                        <li><a class="nav-link" href="<?= BASE_URL; ?>/transaksi"><i class="fas fa-th-large"></i>  <span>Transaksi</span></a></li>
                         <li><a class="nav-link" href="#"><i class="far fa-file-alt"></i><span>Peminjaman</span></a></li>
                     </ul>
                 </aside>
