@@ -15,10 +15,15 @@
                             <div class="col-6">
                                 <h4>Edit Transaksi</h4>
                             </div>
+                            <div class="col-6">
+                                <a href="<?= BASE_URL ?>/transaksi" class="btn btn-primary float-right">Kembali</a>
+                            </div>
                         </div>
-                        <!-- <?php Flasher::flash(); ?> -->
                         <div class="card-body">
                             <div class="card-body">
+                                <div>
+                                    <?php Flasher::flash(); ?>
+                                </div>
                                 <form action="<?= BASE_URL ?>/transaksi/ubah" method="post">
                                     <div class="form-group">
                                         <label>Id Transaksi</label>
@@ -45,7 +50,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Nama Produk</label>
-                                        <select class="form-control" name="id_produk" id="id_produk">
+                                        <select class="form-control" name="id_produk" id="id_produk" style="pointer-events: none;" readonly>
                                             <?php foreach($data['produk'] as $produk) :?>
                                             <!-- <option value="<?php echo $produk['id_produk']; ?>"><?php echo $produk['nama_produk']; ?></option> -->
                                             <option value="<?php echo $produk['id_produk']; ?>" <?php if ($data['transaksi']['id_produk'] == $produk['id_produk']) {
@@ -57,8 +62,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Jumlah</label>
-                                        <input type="text" class="form-control" name="jumlah" id="jumlah"
-                                            value="<?= $data['transaksi']['jumlah'] ?>">
+                                        <input type="number" min="1" class="form-control" name="jumlah" id="jumlah"
+                                            value="<?= $data['transaksi']['jumlah'] ?>" required>
                                     </div>
                                     <!-- <div class="form-group">
                                         <label>Total</label>
@@ -67,7 +72,7 @@
                                     </div> -->
                                     <div class="text-right">
                                         <button class="btn btn-primary mr-1" type="submit">Submit</button>
-                                        <a href="<?= BASE_URL ?>/transaksi" class="btn btn-secondary">Kembali</a>
+                                        <!-- <a href="<?= BASE_URL ?>/transaksi" class="btn btn-secondary">Kembali</a> -->
                                     </div>
                                 </form>
                             </div>
