@@ -15,10 +15,15 @@
                             <div class="col-6">
                                 <h4>Tambah Transaksi</h4>
                             </div>
+                            <div class="col-6">
+                                <a href="<?= BASE_URL ?>/transaksi" class="btn btn-primary float-right">Kembali</a>
+                            </div>
                         </div>
-                        <!-- <?php Flasher::flash(); ?> -->
                         <div class="card-body">
                             <div class="card-body">
+                                <div>
+                                    <?php Flasher::flash(); ?>
+                                </div>
                                 <form action="<?= BASE_URL ?>/transaksi/buat" method="post">
                                     <div class="form-group">
                                         <label>Tanggal Transaksi</label>
@@ -42,7 +47,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Jumlah</label>
-                                        <input type="text" class="form-control" name="jumlah" id="jumlah">
+                                        <input type="number" min="1" class="form-control" name="jumlah" id="jumlah" required>
                                     </div>
                                     <!-- <div class="form-group">
                                         <label>Total</label>
@@ -51,7 +56,7 @@
                             </div>
                             <div class="card-footer text-right">
                                 <button class="btn btn-primary mr-1" type="submit">Submit</button>
-                                <button class="btn btn-secondary" type="reset">Reset</button>
+                                <!-- <a href="<?= BASE_URL ?>/transaksi" class="btn btn-secondary">Kembali</a> -->
                             </div>
                         </div>
                     </div>
@@ -60,3 +65,6 @@
         </div>
     </section>
 </div>
+<script>
+    document.getElementById("tanggal_transaksi").value = new Date().toLocaleDateString("en-CA");
+</script>
