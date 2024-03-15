@@ -5,8 +5,8 @@
         </div>
 
         <div class="section-body">
-            <h2 class="section-title">Table</h2>
-            <p class="section-lead">Example of some Bootstrap table components.</p>
+            <!-- <h2 class="section-title">Table</h2>
+            <p class="section-lead">Example of some Bootstrap table components.</p> -->
 
             <div class="row">
                 <div class="col-12">

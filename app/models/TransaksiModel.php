@@ -1,6 +1,6 @@
 <?php
 class TransaksiModel {
-     // private $table = 'transaksi';
+     private $table = 'transaksi';
      private $db;
      
      public function __construct() {
