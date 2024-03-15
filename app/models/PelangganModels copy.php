@@ -1,5 +1,5 @@
 <?php
-class PelangganModel {
+class PelangganModels {
     private $table = 'pelanggan';
     private $db;
 

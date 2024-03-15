@@ -15,6 +15,15 @@ class TransaksiModel {
           return $this->db->resultAll();
      }
 
+     public function getTotalTransaksi() { 
+          $this->db->query("SELECT SUM(transaksi.total) as total_sum 
+                             FROM transaksi ");
+          $result = $this->db->resultSingle();
+          return $result ? $result['total_sum'] : 0;
+      }
+      
+      
+
      public function getAllPelanggan() {
           $this->db->query("SELECT * FROM pelanggan");
           return $this->db->resultAll();
