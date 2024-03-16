@@ -2,7 +2,7 @@
 class Blog extends Controller {
 
     public function index () {
-        $data['judul'] = "Blog";
+            $data['judul'] = "Blog";
          $data['blog'] = $this->model("BlogModel")->getAllBlog();
          $this->view('templates/header', $data);
          $this->view('blog/index', $data);
@@ -30,3 +30,5 @@ class Blog extends Controller {
           }
      }
 }
+
+?>

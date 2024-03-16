@@ -1,4 +1,5 @@
 <?php
+
 class Pelanggan extends Controller
 {
 
@@ -23,6 +24,7 @@ class Pelanggan extends Controller
     public function tambah()
     {
         if ($this->model('PelangganModel')->tambahpelanggan($_POST) > 0) {
+
             Flasher::setFlash('berhasil', 'ditambahkan', 'success');
             header('Location: ' . BASE_URL . '/pelanggan');
             exit;
@@ -32,6 +34,7 @@ class Pelanggan extends Controller
             exit;
         }
     }
+
 
     public function delete($id)
     {
@@ -52,6 +55,8 @@ class Pelanggan extends Controller
         $pelangganModel->editPelanggan($data);
         Flasher::setFlash('berhasil', 'diupdate', 'success');
         header('Location: ' . BASE_URL . '/pelanggan');
+
+   
     }
     
 }

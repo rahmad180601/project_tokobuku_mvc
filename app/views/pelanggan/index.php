@@ -1,7 +1,7 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1> Halaman Pelanggan<?= $data['judul']; ?></h1>
+            <h1> Halaman <?= $data['judul']; ?></h1>
         </div>
 
         <div class="section-body">
