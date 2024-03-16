@@ -1,5 +1,6 @@
 <?php
 class PelangganModel {
+    private $table = 'pelanggan';
     private $db;
     
     public function __construct() {
@@ -10,6 +11,7 @@ class PelangganModel {
          $this->db->query("SELECT * FROM " . $this->table);
          return $this->db->resultAll();
     }
+    
     
     public function tambahpelanggan ($data) {
         $query = "INSERT INTO pelanggan (id_pelanggan, nama_pelanggan, alamat, telepon) VALUES (:id_pelanggan, :nama_pelanggan, :alamat, :telepon)";
@@ -40,6 +42,5 @@ class PelangganModel {
         $this->db->execute();
         return $this->db->rowCount();
     }
-    
 }
 ?>
