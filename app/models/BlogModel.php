@@ -29,3 +29,5 @@ class BlogModel {
           return $this->db->rowCount();
       }
 }
+
+?>
