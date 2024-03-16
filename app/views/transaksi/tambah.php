@@ -5,8 +5,10 @@
         </div>
 
         <div class="section-body">
+
             <!-- <h2 class="section-title">Table</h2>
             <p class="section-lead">Example of some Bootstrap table components.</p> -->
+
 
             <div class="row">
                 <div class="col-12">
@@ -24,6 +26,7 @@
                                 <div>
                                     <?php Flasher::flash(); ?>
                                 </div>
+
                                 <form action="<?= BASE_URL ?>/transaksi/buat" method="post">
                                     <div class="form-group">
                                         <label>Tanggal Transaksi</label>
@@ -47,7 +50,9 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Jumlah</label>
+
                                         <input type="number" min="1" class="form-control" name="jumlah" id="jumlah" required>
+
                                     </div>
                                     <!-- <div class="form-group">
                                         <label>Total</label>
@@ -56,7 +61,9 @@
                             </div>
                             <div class="card-footer text-right">
                                 <button class="btn btn-primary mr-1" type="submit">Submit</button>
+
                                 <!-- <a href="<?= BASE_URL ?>/transaksi" class="btn btn-secondary">Kembali</a> -->
+
                             </div>
                         </div>
                     </div>
@@ -65,6 +72,8 @@
         </div>
     </section>
 </div>
+
 <script>
     document.getElementById("tanggal_transaksi").value = new Date().toLocaleDateString("en-CA");
 </script>
+

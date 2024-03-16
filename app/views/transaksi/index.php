@@ -5,6 +5,7 @@
         </div>
 
         <div class="section-body">
+
             <!-- <h2 class="section-title">Table</h2>
             <p class="section-lead">Example of some Bootstrap table components.</p> -->
 
@@ -56,6 +57,7 @@
                     </div>
                 </div>
                 <!-- <div class="col-12">
+
                     <div class="card">
                         <div class="card-header">
                             <div class="col-6">
@@ -120,7 +122,9 @@
                             </nav>
                         </div>
                     </div>
+
                 </div> -->
+
             </div>
         </div>
     </section>
