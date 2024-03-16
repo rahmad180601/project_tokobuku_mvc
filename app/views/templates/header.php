@@ -24,6 +24,7 @@
 </head>
 
 <body>
+
     <div id="app">
         <div class="main-wrapper">
             <div class="navbar-bg"></div>
@@ -88,9 +89,12 @@
                         <?php endif; ?>
                         <li><a class="nav-link" href="<?= BASE_URL; ?>/pelanggan"><i class="far fa-user"></i> <span>Pelanggan</span></a></li>
                         <li><a class="nav-link" href="<?= BASE_URL; ?>/product"><i class="fas fa-th"></i> <span>Produk</span></a></li>
-
                         <li><a class="nav-link" href="<?= BASE_URL; ?>/transaksi"><i class="fas fa-th-large"></i>  <span>Transaksi</span></a></li>
                         <li><a class="nav-link" href="<?= BASE_URL; ?>/peminjaman"><i class="far fa-file-alt"></i><span>Peminjaman</span></a></li>
+                        <li><a class="nav-link" href="<?= BASE_URL; ?>/pelanggan"><i class="far fa-user"></i> <span>Pelanggan</span></a></li>
+                        <li><a class="nav-link" href="<?= BASE_URL; ?>/transaksi"><i class="fas fa-th-large"></i>  <span>Transaksi</span></a></li>
+                        <li><a class="nav-link" href="<?= BASE_URL; ?>/peminjaman"><i class="fas fa-th-large"></i> <span>Peminjaman</span></a></li>
+
 
                     </ul>
                 </aside>
@@ -98,5 +102,4 @@
 
    
 
-         
-           
+        
