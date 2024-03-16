@@ -32,6 +32,7 @@ class UserModel {
         return $this->db->resultAll();
     }
 
+
     // public function checkLogin($email, $password) {
     //     if ($email === 'admin@admin.com' && $password === 'admin') {
     //         return true;
