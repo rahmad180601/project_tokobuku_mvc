@@ -10,9 +10,27 @@ class PeminjamanModel
         $this->db = new Database;
     }
 
-    public function getAllPeminjaman()
-    {
-        $this->db->query("SELECT * FROM " . $this->table);
+    // public function getAllPeminjaman()
+    // {
+    //     $this->db->query("SELECT * FROM " . $this->table);
+    //     return $this->db->resultAll();
+    // }
+
+    public function getAllPeminjaman() { 
+        $this->db->query("SELECT peminjaman.*, product.*, pelanggan.* 
+             FROM peminjaman 
+             INNER JOIN product ON peminjaman.id_produk = product.id_produk 
+             INNER JOIN pelanggan ON peminjaman.id_pelanggan = pelanggan.id_pelanggan");
+        return $this->db->resultAll();
+   }
+
+    public function getAllPelanggan() {
+        $this->db->query("SELECT * FROM pelanggan");
+        return $this->db->resultAll();
+    }
+
+    public function getAllProduk() {
+        $this->db->query("SELECT * FROM product");
         return $this->db->resultAll();
     }
 
@@ -22,6 +40,29 @@ class PeminjamanModel
         $this->db->bind('id', $id);
         return $this->db->resultSingle();
     }
+
+    public function getTotalPeminjaman() { 
+        $this->db->query("SELECT SUM(peminjaman.jumlah) as jumlah_sum 
+                           FROM peminjaman ");
+        $result = $this->db->resultSingle();
+        return $result ? $result['jumlah_sum'] : 0;
+    }
+
+    
+    public function getTotalPeminjamanPerBulan() {
+        $this->db->query("SELECT DATE_FORMAT(tanggal_pinjam, '%Y-%m') as month, SUM(jumlah) as jumlah_pinjam
+                           FROM peminjaman
+                           GROUP BY month
+                           ORDER BY month");
+        return $this->db->resultAll();
+    }
+
+    public function getProdukById($id) {
+        $this->db->query("SELECT * FROM product WHERE id_produk = :id");
+        $this->db->bind('id', $id);
+        
+        return $this->db->resultSingle();
+   }
 
     public function addPeminjaman($data)
     {

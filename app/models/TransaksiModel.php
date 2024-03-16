@@ -21,8 +21,14 @@ class TransaksiModel {
           $result = $this->db->resultSingle();
           return $result ? $result['total_sum'] : 0;
       }
-      
-      
+
+      public function getTotalPenjualanPerBulan() {
+          $this->db->query("SELECT DATE_FORMAT(tanggal_transaksi, '%Y-%m') as month, SUM(total) as total_jual
+                             FROM transaksi
+                             GROUP BY month
+                             ORDER BY month");
+          return $this->db->resultAll();
+      }
 
      public function getAllPelanggan() {
           $this->db->query("SELECT * FROM pelanggan");

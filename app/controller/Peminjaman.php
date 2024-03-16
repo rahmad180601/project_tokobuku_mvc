@@ -14,6 +14,8 @@ class Peminjaman extends Controller
     public function tambah()
     {
         $data['judul'] = "Form Tambah Data";
+        $data['pelanggan'] = $this->model("PeminjamanModel")->getAllPelanggan();
+        $data['produk'] = $this->model("PeminjamanModel")->getAllProduk();
         $this->view('templates/header', $data);
         $this->view('peminjaman/tambah', $data);
         $this->view('templates/footer');
@@ -44,6 +46,8 @@ class Peminjaman extends Controller
     {
         $data['judul'] = "Form Edit Data";
         $data['peminjaman'] = $this->model('PeminjamanModel')->getPeminjamanById($id);
+        $data['pelanggan'] = $this->model("PeminjamanModel")->getAllPelanggan();
+        $data['produk'] = $this->model("PeminjamanModel")->getAllProduk();
         $this->view('templates/header', $data);
         $this->view('peminjaman/edit', $data);
         $this->view('templates/footer');

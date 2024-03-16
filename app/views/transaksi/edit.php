@@ -51,7 +51,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Nama Produk</label>
-                                <select class="form-control" name="id_produk" id="id_produk">
+                                <!-- <select class="form-control" name="id_produk" id="id_produk"> -->
 
                                         <select class="form-control" name="id_produk" id="id_produk" style="pointer-events: none;" readonly>
 
