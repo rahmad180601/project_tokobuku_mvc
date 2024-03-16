@@ -63,6 +63,31 @@ class Database {
         return $this->stmt->rowCount();
     }
 
+    public function fetchColumn($columnIndex = 0) {
+        $this->execute();
+    
+        // Handle potential errors during execution
+        if (!$this->stmt) {
+            // Implement error handling (e.g., throw exception, log error)
+            return false;
+        }
+    
+        $result = $this->stmt->fetchColumn($columnIndex);
+    
+        // Differentiate between no rows and a boolean value (false)
+        if ($result === false) {
+            if ($this->stmt->rowCount() === 0) {
+                // No rows found
+                return null;
+            } else {
+                // Handle boolean value (false) or other potential issues
+                // (e.g., log a warning or return a default value)
+            }
+        }
+    
+        return $result;
+    }
+
 }
 
 ?>

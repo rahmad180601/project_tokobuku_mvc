@@ -5,11 +5,59 @@
         </div>
 
         <div class="section-body">
-            <h2 class="section-title">Table</h2>
-            <p class="section-lead">Example of some Bootstrap table components.</p>
+
+            <!-- <h2 class="section-title">Table</h2>
+            <p class="section-lead">Example of some Bootstrap table components.</p> -->
 
             <div class="row">
-                <div class="col-12">
+            <div class="col-xl-12 col-lg-7">
+                    <div class="card shadow mb-4">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">Tabel Transaksi</h6>
+                            <div>
+                            <a href="<?= BASE_URL ?>/transaksi/tambah" class="btn btn-primary float-right">Tambah Transaksi</a>
+                            </div>
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <div class="col-sm-12">
+                                    <table class="table table-bordered table-md">
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Tanggal Transaksi</th>
+                                            <th>Nama Pelanggan</th>
+                                            <th>Nama Produk</th>
+                                            <th>Jumlah</th>
+                                            <th>Total</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        <?php $no = 1; ?>
+                                        <?php foreach ($data['transaksi'] as $transaksi) : ?>
+                                        <tr>
+                                            <td><?= $no++ ?></td>
+                                            <td><?= $transaksi['tanggal_transaksi']; ?></td>
+                                            <td><?= $transaksi['nama_pelanggan']; ?></td>
+                                            <td><?= $transaksi['nama_produk']; ?></td>
+                                            <td><?= $transaksi['jumlah']; ?></td>
+                                            <td><?= $transaksi['total']; ?></td>
+                                            <td>
+                                                <a href="<?= BASE_URL ?>/transaksi/detail/<?= $transaksi['id_transaksi'] ?>" class="btn btn-info">Detail</a>
+                                                <a href="<?= BASE_URL ?>/transaksi/edit/<?= $transaksi['id_transaksi'] ?>" class="btn btn-warning">Edit</a>
+                                                <a href="<?= BASE_URL ?>/transaksi/hapus/<?= $transaksi['id_transaksi'] ?>" class="btn btn-danger" 
+                                                    onclick="return confirm('Apakah anda yakin ingin menghapus data ini?');">Hapus</a>
+                                            </td>
+                                        </tr>
+                                        <?php endforeach; ?>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-12">
+
                     <div class="card">
                         <div class="card-header">
                             <div class="col-6">
@@ -74,7 +122,9 @@
                             </nav>
                         </div>
                     </div>
-                </div>
+
+                </div> -->
+
             </div>
         </div>
     </section>
