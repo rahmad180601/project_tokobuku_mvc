@@ -1,7 +1,9 @@
-# Project Tokobook MVC
-Langka - langka menjalankan project Menggunakan github dekstop
-1. clone code menggunakan aplikasi github dekstop
-2. Download aplikasi [Disini](https://desktop.github.com/)
+# Nama Kelompok
+1. Rahmad Khoirun Nasirin
+2. Falendika Tegar Pratama
+3. Fitrah Rahmadhani Ahmad
+4. Ni Made Julia Budiantari
+5. M.Arya Suherman
 
 
 # Jika Sudah Selesai Clone
@@ -15,29 +17,30 @@ admin / petugas
 4. password (VARCHAR)
 5. roles (VARCHAR) admin/petugas
 
-Produk
-1. id (INT, PRIMARY KEY, AUTO_INCREMENT)
-2. nama (VARCHAR)
-3. harga (DECIMAL)
-4. stok (INT)
+Product
+1. id_produk (VARCHAR, PRIMARY KEY)
+2. nama_produk (VARCHAR)
+3. harga_satuan (DECIMAL)
+4. stok_jual (INT)
+5. stok_pinjam (INT)
 
 Pelanggan
-1. id (INT, PRIMARY KEY, AUTO_INCREMENT)
-2. nama (VARCHAR)
+1. id_pelanggan (INT, PRIMARY KEY, AUTO_INCREMENT)
+2. nama_pelanggan (VARCHAR)
 3. alamat (TEXT)
 4. telepon (VARCHAR)
 
 Transaksi
-1. id (INT, PRIMARY KEY, AUTO_INCREMENT)
+1. id_transaksi (INT, PRIMARY KEY, AUTO_INCREMENT)
 2. tanggal_transaksi (DATE)
 3. id_pelanggan (INT, FOREIGN KEY REFERENCES pelanggan(id))
-4. id_produk (INT, FOREIGN KEY REFERENCES produk(id))
+4. id_produk (VARCHAR, FOREIGN KEY REFERENCES product(id))
 5. jumlah (INT)
 6. total (DECIMAL)
 
 Peminjaman
-1. id (INT, PRIMARY KEY, AUTO_INCREMENT)
-2. id_produk (INT, FOREIGN KEY REFERENCES produk(id))
+1. id_peminjaman (INT, PRIMARY KEY, AUTO_INCREMENT)
+2. id_produk (VARCHAR, FOREIGN KEY REFERENCES product(id))
 3. id_pelanggan (INT, FOREIGN KEY REFERENCES pelanggan(id))
 4. tanggal_pinjam (DATE)
 5. tanggal_kembali (DATE)
